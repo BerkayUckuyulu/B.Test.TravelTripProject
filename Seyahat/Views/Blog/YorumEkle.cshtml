@@ -1,0 +1,26 @@
+﻿@using Seyahat.Models.Clasess
+@model Yorumlar
+@{
+    Layout = null;
+}
+
+<h2>Yorum Ekle</h2>
+<br />
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.Blogid)
+    @Html.TextBoxFor(x => x.Blogid, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.ID)
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.KullaniciAdi)
+    @Html.TextAreaFor(x => x.KullaniciAdi, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Yorum)
+    @Html.TextBoxFor(x => x.Yorum, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Mail)
+    @Html.TextBoxFor(x => x.Mail, new { @class = "form-control" })
+    <button class="btn btn-toolbar">Yorum Ekle</button>
+</form>
+

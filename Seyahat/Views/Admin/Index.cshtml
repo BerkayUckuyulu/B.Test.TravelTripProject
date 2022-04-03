@@ -1,0 +1,39 @@
+﻿@using Seyahat.Models.Clasess
+@model List<Blog> 
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Blog Listesi</h2>
+<br />
+<a href="/Admin/BlogEkle/" class="btn btn-primary">Yeni Blog Ekle</a>
+<br />
+<br />
+<table class="table table-bordered">
+    <tr>
+        <td>Id</td>
+        <td>Başlık</td>
+        <td>Açılama</td>
+        <td>Tarih</td>
+        <td>SİL</td>
+        <td>GÜNCELLE</td>
+        <td>Detaylar</td>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ID</td>
+            <td>@item.Baslik</td>
+            <td>@item.Aciklama.Substring(0,50)</td>
+            <td>@item.Tarih.ToString("MM,yyyy")</td>
+            <td><a href="/Admin/BlogSil/@item.ID" class="btn btn-danger">SİL</a></td>
+            <td><a href="/Admin/BlogGetir/@item.ID" class="btn btn-success">Güncelle</a></td>
+            <td><a href="/Blog/BlogDetay/@item.ID" class="btn btn-lg">Detaylar</a></td>
+
+            
+        </tr>
+    }
+
+
+</table>
